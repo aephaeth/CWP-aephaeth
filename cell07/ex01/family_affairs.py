@@ -1,25 +1,15 @@
 #!/usr/bin/env python3
 
-def average(class_dict):
-    if not class_dict:
-        return 0
-    total_score = sum(class_dict.values())
-    return total_score / len(class_dict)
+def find_the_redheads(family_dict):
+    return list(filter(lambda name: family_dict[name] == "red", family_dict))
 
-# ส่วนทดสอบรันตามตัวอย่างในโจทย์
-class_3B = {
-    "marine": 18,
-    "jean": 15,
-    "coline": 8,
-    "luc": 9
+dupont_family = {
+    "florian": "red",
+    "marie": "blond",
+    "virginie": "brunette",
+    "david": "red",
+    "franck": "red"
 }
 
-class_3C = {
-    "quentin": 17,
-    "julie": 15,
-    "marc": 8,
-    "stephanie": 13
-}
-
-print(f"Average for class 3B: {average(class_3B)}.")
-print(f"Average for class 3C: {average(class_3C)}.")
+if __name__ == "__main__":
+    print(find_the_redheads(dupont_family))
